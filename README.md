@@ -1,5 +1,9 @@
 # React Native Web Boilerplate
 
+## Screens
+
+<img src='https://github.com/kiyohken2000/react-native-web-boilerplate/blob/master/__DELELE_ME__/img1.jpg' width='80%'>
+
 ## Libraries
 
 - react

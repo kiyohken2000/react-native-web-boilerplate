@@ -1,9 +1,9 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import ScreenTemplate from '../../components/ScreenTemplate'
 import Button from '../../components/Button'
 import { useNavigate } from "react-router-dom";
-import { colors } from "../../theme";
+import { colors, fontSize } from "../../theme";
 
 export default function Detail() {
   const navigate = useNavigate()
@@ -13,16 +13,31 @@ export default function Detail() {
   }
   return (
     <ScreenTemplate>
-      <View>
-        <Text>Home</Text>
-        <Button
-          label='Go Back'
-          onPress={onGoBack}
-          color={colors.deeppink}
-          desable={false}
-          labelColor={colors.white}
-        />
+      <View style={styles.container}>
+        <Text style={styles.label}>Detail</Text>
+        <View style={{width: '50%'}}>
+          <Button
+            label='Go Back'
+            onPress={onGoBack}
+            color={colors.deeppink}
+            desable={false}
+            labelColor={colors.white}
+          />
+        </View>
       </View>
     </ScreenTemplate>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.white
+  },
+  label: {
+    fontSize: fontSize.xxLarge,
+    fontWeight: '500'
+  }
+})

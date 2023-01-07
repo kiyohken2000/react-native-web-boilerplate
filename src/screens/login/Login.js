@@ -1,42 +1,32 @@
 import React, { useContext } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import ScreenTemplate from '../../components/ScreenTemplate'
-import Button from '../../components/Button'
-import { useNavigate } from "react-router-dom";
 import { colors, fontSize } from "../../theme";
-import { UserContext } from '../../contexts/UserContext'
+import { UserContext } from "../../contexts/UserContext";
+import Button from '../../components/Button'
 
-export default function Home() {
-  const navigate = useNavigate()
+export default function Login() {
   const { setUser } = useContext(UserContext)
 
-  const onButtonPress = () => {
-    navigate('/detail')
-  }
-
-  const onLogoutPress = () => {
-    setUser('')
+  const onLoginPress = () => {
+    const userData = {
+      id: 'user-1234',
+      userName: 'abcdef'
+    }
+    setUser(userData)
   }
 
   return (
     <ScreenTemplate>
       <View style={styles.container}>
-        <Text style={styles.label}>Home</Text>
+        <Text style={styles.label}>Login Screen</Text>
         <View style={{width: '50%'}}>
           <Button
-            label='Go Detail'
-            onPress={onButtonPress}
+            label='Login'
+            onPress={onLoginPress}
             color={colors.lightPurple}
             desable={false}
             labelColor={colors.white}
-          />
-          <View style={{paddingVertical: 10}} />
-          <Button
-            label='Logout'
-            onPress={onLogoutPress}
-            color={colors.aquamarine}
-            desable={false}
-            labelColor={colors.black}
           />
         </View>
       </View>
@@ -54,5 +44,5 @@ const styles = StyleSheet.create({
   label: {
     fontSize: fontSize.xxLarge,
     fontWeight: '500'
-  }
+  },
 })
