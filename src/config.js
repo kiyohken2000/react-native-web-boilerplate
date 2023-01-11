@@ -3,4 +3,6 @@ const config = {
   siteUrl: 'https://www.yahoo.co.jp'
 }
 
-export { config }
+const basename = ''
+
+export { config, basename }

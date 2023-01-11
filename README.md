@@ -33,3 +33,16 @@ yarn install
 ```
 yarn start
 ```
+
+## NOTES
+
+### Deploying app to the subfolder on server
+
+Adding publicPath to React Router's basename prop.
+
+**src\config.js**
+
+```javascript
+// e.g. basename='/path/to/subfolder/'
+const basename = ''
+```
